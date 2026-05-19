@@ -1,0 +1,82 @@
+@use '../../styles/main' as *;
+
+.page { padding-top: 68px; }
+
+.top {
+  background: $black-soft;
+  border-bottom: 1px solid $border;
+  padding: 60px 0 48px;
+}
+
+.heading {
+  font-family: $font-serif;
+  font-size: clamp(36px, 6vw, 64px);
+  font-weight: 900;
+  color: $white;
+  margin: 8px 0 12px;
+}
+
+.subheading {
+  font-size: 15px;
+  color: $text-muted;
+}
+
+.filterBar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  padding: 36px 0 32px;
+  border-bottom: 1px solid $border;
+  margin-bottom: 40px;
+}
+
+.filterButton {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  border: 1px solid $border;
+  color: $text-muted;
+  font-size: 13px;
+  font-weight: 500;
+  padding: 10px 20px;
+  border-radius: 100px;
+  transition: all $transition;
+
+  &:hover {
+    color: $white;
+    border-color: $text-hint;
+  }
+}
+
+.filterActive {
+  background: $orange;
+  border-color: $orange;
+  color: $white;
+}
+
+.filterCount {
+  background: $black-card;
+  color: $text-muted;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 100px;
+  transition: $transition;
+
+  .filterActive & {
+    background: rgba(255,255,255,0.25);
+    color: $white;
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  padding-bottom: 80px;
+
+  @media (max-width: 900px) { grid-template-columns: repeat(2, 1fr); }
+  @media (max-width: 560px) { grid-template-columns: 1fr; }
+}

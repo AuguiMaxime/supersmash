@@ -1,0 +1,154 @@
+@use '../../styles/main' as *;
+
+.page { padding-top: 68px; }
+
+.top {
+  background: $black-soft;
+  border-bottom: 1px solid $border;
+  padding: 60px 0 48px;
+}
+
+.heading {
+  font-family: $font-serif;
+  font-size: clamp(36px, 6vw, 64px);
+  font-weight: 900;
+  color: $white;
+  margin-top: 10px;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  padding: 64px 0 80px;
+  align-items: start;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+.formSide {}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+
+  label {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: $text-muted;
+  }
+
+  input, textarea {
+    background: $black-card;
+    border: 1px solid $border;
+    border-radius: $radius-md;
+    color: $white;
+    font-family: $font-sans;
+    font-size: 14px;
+    padding: 12px 16px;
+    transition: border-color $transition;
+    resize: vertical;
+
+    &::placeholder { color: $text-hint; }
+    &:focus { outline: none; border-color: $orange; }
+  }
+}
+
+.inputError { border-color: #e05050 !important; }
+
+.errorMsg {
+  font-size: 12px;
+  color: #e05050;
+}
+
+.successBox {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 40px;
+  background: $black-card;
+  border: 1px solid $border;
+  border-radius: $radius-lg;
+
+  span { font-size: 32px; color: $orange; }
+  h3 { font-family: $font-serif; font-size: 24px; color: $white; }
+  p { font-size: 14px; color: $text-muted; }
+}
+
+.infoSide {}
+
+.infoBox, .hoursBox {
+  background: $black-card;
+  border: 1px solid $border;
+  border-radius: $radius-lg;
+  padding: 28px;
+  margin-bottom: 20px;
+
+  h3 {
+    font-family: $font-serif;
+    font-size: 18px;
+    color: $white;
+    margin-bottom: 20px;
+  }
+}
+
+.infoList {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  li {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+  }
+
+  strong {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: $text-hint;
+  }
+
+  span { font-size: 14px; color: $text-muted; }
+
+  a {
+    font-size: 14px;
+    color: $orange;
+    transition: opacity $transition;
+    &:hover { opacity: 0.7; }
+  }
+}
+
+.hoursTable {
+  width: 100%;
+  border-collapse: collapse;
+
+  tr {
+    border-bottom: 1px solid $border;
+    &:last-child { border-bottom: none; }
+  }
+
+  td {
+    font-size: 13px;
+    color: $text-muted;
+    padding: 9px 0;
+    &:first-child { color: $white; font-weight: 500; }
+  }
+}
+
+.day { width: 45%; }
+.evening { text-align: right; color: $text-hint !important; }

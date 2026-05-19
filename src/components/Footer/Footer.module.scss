@@ -1,0 +1,120 @@
+@use '../../styles/main' as *;
+
+.footer {
+  background: #0a0907;
+  border-top: 1px solid $border;
+  padding-top: 60px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1.5fr;
+  gap: 48px;
+  padding-bottom: 48px;
+
+  @media (max-width: 900px) { grid-template-columns: 1fr 1fr; gap: 32px; }
+  @media (max-width: 560px) { grid-template-columns: 1fr; }
+}
+
+.logo {
+  display: block;
+  font-family: $font-serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: $white;
+  margin-bottom: 10px;
+
+  em { color: $orange; font-style: normal; }
+}
+
+.tagline {
+  font-size: 13px;
+  color: $text-muted;
+  line-height: 1.5;
+  margin-bottom: 16px;
+}
+
+.instagramLink {
+  font-size: 12px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: $orange;
+  transition: opacity $transition;
+
+  &:hover { opacity: 0.7; }
+}
+
+.col {
+  h4 {
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: $text-hint;
+    margin-bottom: 16px;
+  }
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  a {
+    font-size: 13px;
+    color: $text-muted;
+    transition: color $transition;
+    &:hover { color: $white; }
+  }
+
+  li { font-size: 13px; color: $text-muted; }
+}
+
+.hoursList li {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid $border;
+
+  &:last-child { border-bottom: none; }
+}
+
+.hoursDay {
+  font-size: 11px;
+  color: $text-hint;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.hoursClosed { color: $text-hint; font-style: italic; }
+
+.contactList li {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+
+  svg { flex-shrink: 0; margin-top: 3px; color: $orange; }
+}
+
+.bottom {
+  border-top: 1px solid $border;
+  padding: 16px 0;
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @media (max-width: 560px) {
+      flex-direction: column;
+      gap: 4px;
+      text-align: center;
+    }
+  }
+
+  span {
+    font-size: 11px;
+    color: $text-hint;
+    letter-spacing: 0.5px;
+  }
+}

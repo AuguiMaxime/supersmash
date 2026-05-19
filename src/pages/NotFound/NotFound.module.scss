@@ -1,0 +1,36 @@
+@use '../../styles/main' as *;
+
+.page {
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 40px 24px;
+  padding-top: 108px;
+}
+
+.code {
+  font-family: $font-serif;
+  font-size: 140px;
+  font-weight: 900;
+  color: $orange;
+  line-height: 1;
+  opacity: 0.15;
+  display: block;
+  margin-bottom: -40px;
+}
+
+.title {
+  font-family: $font-serif;
+  font-size: 32px;
+  color: $white;
+  margin-bottom: 12px;
+}
+
+.sub {
+  font-size: 15px;
+  color: $text-muted;
+  margin-bottom: 32px;
+}
